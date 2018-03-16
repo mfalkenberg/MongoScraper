@@ -10,6 +10,8 @@ var logger = require("morgan");
 var db = require("./models");
 
 var app = express();
+var PORT = process.env.PORT || 8080;
+
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));
@@ -107,6 +109,6 @@ app.post("/articles/:id", function(req, res) {
     });
 });
 
-app.listen(8080, function() {
-  console.log("App running on port 8080!");
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
 });
